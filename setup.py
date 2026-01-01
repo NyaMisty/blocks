@@ -22,7 +22,9 @@ setup(
     install_requires=[
         'maintboot',
         'python-augeas >= 0.4.2a0',
-        'pyparted > 3.10a0'],
+        'pyparted > 3.10a0',
+        'setuptools >= 40.8.0, < 81',
+    ],
     classifiers='''
         Programming Language :: Python :: 3
         Programming Language :: Python :: 3.3
