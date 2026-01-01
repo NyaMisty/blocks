@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blocks"
+version = "0.1.4"
+description = "Conversion tools for block devices"
+readme = { text = """
+Conversion tools for block devices.
+
+Convert between raw partitions, logical volumes, and bcache
+devices witout moving data.
+
+See `github.com/g2p/blocks <https://github.com/g2p/blocks#readme>`_
+for installation and usage instructions.
+""", content-type = "text/x-rst" }
+requires-python = ">=3.8"
+license = { text = "GNU GPL" }
+authors = [
+  { name = "Gabriel de Perthuis", email = "g2p.code+blocks@gmail.com" }
+]
+keywords = ["bcache", "lvm", "storage", "partitioning", "ssd"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "License :: OSI Approved :: GNU General Public License (GPL)",
+  "Operating System :: POSIX :: Linux",
+  "Intended Audience :: System Administrators",
+  "Intended Audience :: End Users/Desktop",
+  "Topic :: System :: Filesystems",
+  "Topic :: Utilities",
+  "Environment :: Console",
+]
+
+dependencies = [
+  "maintboot",
+  "python-augeas>=0.4.2a0",
+  "pyparted>3.10a0",
+  "setuptools<81",
+]
+
+[project.urls]
+Homepage = "https://github.com/g2p/blocks"
+
+[project.scripts]
+blocks = "blocks.__main__:script_main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["blocks*"]
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.407",
+]
