@@ -53,6 +53,8 @@ Conversion makes no demands on the kernel, but to use bcache, you need
 Linux 3.10 or newer.  [My own branch](https://github.com/g2p/linux/commits/for-3.11/bcache) currently adds
 resizing support on top of [Kent Overstreet's upstream branch](http://evilpiepirate.org/git/linux-bcache.git/).
 
+Note: When using LVM method, you must ensure all LVs in VG are inactive except the target LV (using `lvchange -an`)
+
 ### maintboot mode
 
 Maintboot mode (`blocks to-bcache --maintboot`) is an easier way
